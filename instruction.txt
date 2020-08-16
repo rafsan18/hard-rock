@@ -1,0 +1,8 @@
+1. call api on search => `https://api.lyrics.ovh/suggest/${searchFieldValue}`
+
+2. get 10 results and show their information by updating the result box
+
+3. call api on get lyrics => `https://api.lyrics.ovh/v1/${artist}/${title}`
+
+3. show the lyrics below the search result
+box
