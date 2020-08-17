@@ -26,7 +26,13 @@ for (let i = 0; i < getLyricsBtn.length; i++) {
     fetch(
       `https://api.lyrics.ovh/v1/${artistName[i].innerText}/${title[i].innerText}`
     )
-      .then((lyrics) => lyrics.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject("lyrics not found");
+        }
+      })
       .then((fullLyrics) => {
         console.log(fullLyrics);
         lyricsSpace[i].innerHTML += `
@@ -36,6 +42,9 @@ for (let i = 0; i < getLyricsBtn.length; i++) {
           <pre class="lyric text-white">${fullLyrics.lyrics}</pre>
         </div>`;
         console.log(lyricsSpace[i]);
+      })
+      .catch((error) => {
+        lyricsSpace[i].innerHTML += `<p class = "text-danger"> ${error}</p>`;
       });
   });
 }
