@@ -31,8 +31,8 @@ for (let i = 0; i < getLyricsBtn.length; i++) {
         console.log(fullLyrics);
         lyricsSpace[i].innerHTML += `
         <div class="single-lyrics text-center">
-          <button class="btn go-back">&lsaquo;</button>
-          <h2 class="text-success mb-4">Pentatonix - Na Na Na</h2>
+          <button class="btn btn-success go-back">&lsaquo;</button>
+          <h2 class="text-success mb-4">${artistName[i].innerText} - ${title[i].innerText}</h2>
           <pre class="lyric text-white">${fullLyrics.lyrics}</pre>
         </div>`;
         console.log(lyricsSpace[i]);
