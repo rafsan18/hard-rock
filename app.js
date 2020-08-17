@@ -1,6 +1,7 @@
 const searchField = document.querySelector(`[data-search-field]`);
 const searchBtn = document.querySelector(`[data-search-btn]`);
 const title = document.querySelectorAll(".lyrics-name");
+const artistName = document.querySelectorAll(".artist-name");
 
 searchBtn.addEventListener("click", function () {
   const searchFieldValue = searchField.value;
@@ -13,6 +14,7 @@ searchBtn.addEventListener("click", function () {
       console.log(title);
       for (let i = 0; i < title.length; i++) {
         title[i].innerText = searchResult.data[i].title;
+        artistName[i].innerText = searchResult.data[i].artist.name;
       }
     });
 });
