@@ -12,6 +12,7 @@ body {
   padding: 22px;
   border: none;
   border-radius: 25px;
+  color: #fff;
 }
 .btn {
   border-radius: 1.5rem;
@@ -37,7 +38,11 @@ body {
 .single-result {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
+  display: none;
 }
 .single-lyrics {
   margin: 0 auto;
+}
+#simple-results {
+  display: none;
 }
