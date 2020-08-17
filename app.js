@@ -3,6 +3,7 @@ const searchBtn = document.querySelector(`[data-search-btn]`);
 const title = document.querySelectorAll(".lyrics-name");
 const artistName = document.querySelectorAll(".artist-name");
 const getLyricsBtn = document.querySelectorAll(`[data-get-lyrics]`);
+const lyricsSpace = document.querySelectorAll(".single-result");
 
 searchBtn.addEventListener("click", function () {
   const searchFieldValue = searchField.value;
@@ -28,6 +29,13 @@ for (let i = 0; i < getLyricsBtn.length; i++) {
       .then((lyrics) => lyrics.json())
       .then((fullLyrics) => {
         console.log(fullLyrics);
+        lyricsSpace[i].innerHTML += `
+        <div class="single-lyrics text-center">
+          <button class="btn go-back">&lsaquo;</button>
+          <h2 class="text-success mb-4">Pentatonix - Na Na Na</h2>
+          <pre class="lyric text-white">${fullLyrics.lyrics}</pre>
+        </div>`;
+        console.log(lyricsSpace[i]);
       });
   });
 }
